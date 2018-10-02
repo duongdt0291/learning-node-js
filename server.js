@@ -1,6 +1,7 @@
 const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
+const port = process.env.PORT || 3000
 
 const app = express()
 
@@ -16,9 +17,9 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use((req, res, next) => {
-  res.render('maintain.hbs')
-})
+// app.use((req, res, next) => {
+//   res.render('maintain.hbs')
+// })
 
 hbs.registerPartials('views/partials')
 
@@ -45,6 +46,6 @@ app.get('/about', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Loading')
+app.listen(port, () => {
+  console.log(`App is listening in port ${port}`)
 })
