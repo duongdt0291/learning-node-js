@@ -42,7 +42,13 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
-    pageTitle: 'About age'
+    pageTitle: 'About page'
+  })
+})
+
+app.get('/project', (req, res) => {
+  res.render('project.hbs', {
+    pageTitle: 'Project page'
   })
 })
 
